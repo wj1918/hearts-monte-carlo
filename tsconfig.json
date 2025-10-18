@@ -1,10 +1,10 @@
 {
-    "compilerOptions": {
-        "target": "ES2020",
-        "module": "ESNext",
-        "strict": true,
-        "esModuleInterop": true,
-        "outDir": "./",
-        "moduleResolution": "bundler"
-    }
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "./",
+    "moduleResolution": "bundler"
+  }
 }

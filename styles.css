@@ -1,33 +1,33 @@
 body {
-    font-family: sans-serif;
-    background: #084;
-    color: white;
-    text-align: center;
+  font-family: sans-serif;
+  background: #084;
+  color: white;
+  text-align: center;
 }
 
 #controls {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 #gameLog {
-    width: 90%;
-    margin: auto;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1em;
-    border-radius: 8px;
-    max-height: 70vh;
-    overflow-y: auto;
-    text-align: left;
-    font-family: monospace;
-    line-height: 1.4em;
+  width: 90%;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1em;
+  border-radius: 8px;
+  max-height: 70vh;
+  overflow-y: auto;
+  text-align: left;
+  font-family: monospace;
+  line-height: 1.4em;
 }
 
 button {
-    background: #f22;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    margin-left: 10px;
-    border-radius: 4px;
-    cursor: pointer;
+  background: #f22;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 10px;
+  border-radius: 4px;
+  cursor: pointer;
 }
