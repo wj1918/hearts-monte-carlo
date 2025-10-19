@@ -1,7 +1,35 @@
-
-
 // main.ts
 import './style.css'
+import './card.css'
+
+function waitForContinue(): Promise<void> {
+  return new Promise(resolve => {
+    const btn = document.getElementById('continueBtn')!;
+    btn.style.display = '';
+    const handler = () => {
+      btn.style.display = 'none';
+      btn.removeEventListener('click', handler);
+      resolve();
+    };
+    btn.addEventListener('click', handler);
+  });
+}
+function renderHands(players: Player[]) {
+  for (let i = 0; i < 4; i++) {
+    const handDiv = document.getElementById(`hand-${i}`);
+    if (!handDiv) continue;
+    // Sort hand by suit then rank
+    const suitOrder: Suit[] = ['♣', '♦', '♥', '♠'];
+    const rankOrder: Rank[] = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+    const sortedHand = [...players[i].hand].sort((a, b) => {
+      const suitDiff = suitOrder.indexOf(a.suit) - suitOrder.indexOf(b.suit);
+      if (suitDiff !== 0) return suitDiff;
+      return rankOrder.indexOf(a.rank) - rankOrder.indexOf(b.rank);
+    });
+    handDiv.innerHTML = sortedHand.map(card => `<div class="card ${card.suit}${card.rank} up bottom"><div class="faceup" title="${card.suit}"></div></div>`).join(' ');
+  }
+}
+
 
 type Suit = '♣' | '♦' | '♥' | '♠';
 type Rank = '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | 'J' | 'Q' | 'K' | 'A';
@@ -121,7 +149,9 @@ class HeartsGame {
     for (let i = 0; i < 52; i++) {
       this.players[i % 4].hand.push(this.deck[i]);
     }
+    renderHands(this.players);
   }
+
 
   async playRound(numSims: number) {
     this.deal();
@@ -129,6 +159,7 @@ class HeartsGame {
     this.playedCards = [];
     const leader = this.findPlayerWithCard('♣', '2');
     let currentLeader = leader;
+    const pauseCheckbox = document.getElementById('pauseTrick') as HTMLInputElement;
 
     for (let trickNum = 0; trickNum < 13; trickNum++) {
       const trick: { player: Player; card: Card }[] = [];
@@ -145,6 +176,7 @@ class HeartsGame {
         trick.push({ player, card });
         this.playedCards.push(card);
         log(`${player.name} plays ${card.rank}${card.suit}`);
+        renderHands(this.players);
         await new Promise(r => setTimeout(r, 100));
       }
 
@@ -153,6 +185,10 @@ class HeartsGame {
       const winner = valid.reduce((max, t) => t.card.value > max.card.value ? t : max);
       currentLeader = this.players.indexOf(winner.player);
       log(`🂠 Trick winner: ${winner.player.name}<br>`);
+
+      if (pauseCheckbox && pauseCheckbox.checked) {
+        await waitForContinue();
+      }
     }
 
     for (const p of this.players) {

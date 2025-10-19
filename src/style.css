@@ -1,3 +1,30 @@
+/* Player hand styles extracted from index.html */
+.player-hand {
+  /* border: 1px solid #aaa; */
+  border-radius: 8px;
+  padding: 8px;
+  /* background: #f8f8f8; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: black;
+}
+#hand-0, #hand-2 {
+  min-width: 200px;
+  min-height: 60px;
+}
+#hand-1, #hand-3 {
+  min-width: 60px;
+  min-height: 200px;
+}
+.vertical-hand {
+  writing-mode: vertical-lr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 body {
   font-family: sans-serif;
   background: #084;
