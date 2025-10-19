@@ -16,7 +16,7 @@ function waitForContinue(): Promise<void> {
 }
 function renderHands(players: Player[]) {
   for (let i = 0; i < 4; i++) {
-    const handDiv = document.getElementById(`hand-${i}`);
+  const handDiv = document.getElementById(`hand-${i}`);
     if (!handDiv) continue;
     // Sort hand by suit then rank
     const suitOrder: Suit[] = ['♣', '♦', '♥', '♠'];
@@ -26,7 +26,14 @@ function renderHands(players: Player[]) {
       if (suitDiff !== 0) return suitDiff;
       return rankOrder.indexOf(a.rank) - rankOrder.indexOf(b.rank);
     });
-    handDiv.innerHTML = sortedHand.map(card => `<div class="card ${card.suit}${card.rank} up bottom"><div class="faceup" title="${card.suit}"></div></div>`).join(' ');
+    // set overlap class so CSS will compact cards; templates include per-card index (--i) and --count
+    handDiv.classList.add('overlap');
+    const count = sortedHand.length;
+    handDiv.innerHTML = sortedHand.map((card, idx) => `
+      <div class="card ${card.suit}${card.rank} up bottom" style="--i: ${idx}; --count: ${count};">
+        <div class="faceup" title="${card.suit}${card.rank}"></div>
+      </div>
+    `).join(' ');
   }
 }
 

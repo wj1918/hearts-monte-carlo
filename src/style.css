@@ -25,6 +25,31 @@
   align-items: center;
 }
 
+/* Overlap utilities */
+:root {
+  /* negative value pulls cards together; positive spread distance in px when expanding */
+  --card-overlap: -36px; /* horizontal overlap when compact */
+  --card-overlap-vertical: -28px; /* vertical overlap when compact */
+  --card-spread: 22px; /* per-card spacing when expanded on hover */
+}
+
+/* Make individual cards inline-block so bounding boxes are stable */
+.player-hand .card {
+  display: inline-block;
+  margin: 2px 0 2px 0;
+  transition: transform 280ms cubic-bezier(.2,.9,.2,1), margin 200ms ease;
+}
+
+/* Compact (overlapped) mode: add `overlap` class to player-hand to enable */
+.player-hand.overlap .card:not(:first-child) {
+  margin-left: var(--card-overlap);
+}
+
+/* Safe responsive tweaks */
+@media (max-width: 640px) {
+  :root { --card-overlap: -28px; --card-overlap-vertical: -22px; --card-spread: 16px; }
+}
+
 body {
   font-family: sans-serif;
   background: #084;
