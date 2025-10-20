@@ -61,8 +61,7 @@ body {
 }
 
 #gameLog {
-  width: 90%;
-  margin: auto;
+  width: 400px;
   background: rgba(255, 255, 255, 0.1);
   padding: 1em;
   border-radius: 8px;
