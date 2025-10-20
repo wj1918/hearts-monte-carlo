@@ -11,10 +11,13 @@ simSlider.addEventListener('input', () => {
 });
 
 document.getElementById('startBtn')!.addEventListener('click', async () => {
+  const pauseCheckbox = document.getElementById('pauseTrick') as HTMLInputElement;
+  pauseCheckbox.disabled = true;
   const numSims = parseInt(simSlider.value);
   (document.getElementById("gameLog")!).innerHTML = ""
   log(`Starting Hearts Game with ${numSims} Monte Carlo sims per move...`);
   await game.playRound(numSims);
+  pauseCheckbox.disabled = false;
   log(`<br>🏁 Round finished.`);
 });
 

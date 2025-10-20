@@ -2,9 +2,7 @@
 function waitForContinue(): Promise<void> {
   return new Promise(resolve => {
     const btn = document.getElementById('continueBtn')!;
-    btn.style.display = '';
     const handler = () => {
-      btn.style.display = 'none';
       btn.removeEventListener('click', handler);
       resolve();
     };
