@@ -49,11 +49,6 @@
   margin-top: var(--card-overlap-vertical);
 }
 
-/* Safe responsive tweaks */
-@media (max-width: 640px) {
-  :root { --card-overlap: -28px; --card-overlap-vertical: -22px; --card-spread: 16px; }
-}
-
 body {
   font-family: sans-serif;
   background: #084;
