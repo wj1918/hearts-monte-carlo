@@ -27,35 +27,24 @@
   <div id="table-container" style="display: flex; flex-direction: column; align-items: center; margin: 32px 0;">
     <div id="player-top" style="display: flex; flex-direction: column; align-items: center; margin-bottom: 16px;">
       <span class="player-label">Alice</span>
-      <div id="hand-0" class="player-hand"></div>
+      <div id="hand-0" class="player-hand overlap"></div>
     </div>
-    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+    <div style="display: flex; flex-direction: row; justify-content: space-between; width: 100%; max-width: 800px;">
       <div id="player-left" style="margin-right: 16px; display: flex; flex-direction: column; align-items: center;">
         <span class="player-label">Bob</span>
-        <div id="hand-1" class="player-hand vertical-hand"></div>
+        <div id="hand-1" class="player-hand vertical-hand overlap-vertical"></div>
       </div>
-      <div id="table-center" style="width: 180px; height: 180px; border-radius: 50%; background: #eaeaea; display: flex; align-items: center; justify-content: center; font-size: 1.2em; color: #888;">Hearts Table</div>
       <div id="player-right" style="margin-left: 16px; display: flex; flex-direction: column; align-items: center;">
         <span class="player-label">Dave</span>
-        <div id="hand-3" class="player-hand vertical-hand"></div>
+        <div id="hand-3" class="player-hand vertical-hand overlap-vertical"></div>
       </div>
     </div>
     <div id="player-bottom" style="display: flex; flex-direction: column; align-items: center; margin-top: 16px;">
       <span class="player-label">Carol</span>
-      <div id="hand-2" class="player-hand"></div>
+      <div id="hand-2" class="player-hand overlap"></div>
     </div>
   </div>
 
-
-  <style>
-    .player-label {
-      color: #333;
-      font-size: 1em;
-      margin-bottom: 2px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-  </style>
   <div id="gameLog"></div>
 
   <script type="module" src="/src/main.ts"></script>

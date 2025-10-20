@@ -16,12 +16,12 @@
 }
 #hand-1, #hand-3 {
   min-width: 60px;
-  min-height: 200px;
+  min-height: 500px;
 }
 .vertical-hand {
   writing-mode: vertical-lr;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -29,7 +29,7 @@
 :root {
   /* negative value pulls cards together; positive spread distance in px when expanding */
   --card-overlap: -36px; /* horizontal overlap when compact */
-  --card-overlap-vertical: -28px; /* vertical overlap when compact */
+  --card-overlap-vertical: -65px; /* vertical overlap when compact */
   --card-spread: 22px; /* per-card spacing when expanded on hover */
 }
 
@@ -43,6 +43,10 @@
 /* Compact (overlapped) mode: add `overlap` class to player-hand to enable */
 .player-hand.overlap .card:not(:first-child) {
   margin-left: var(--card-overlap);
+}
+
+.player-hand.overlap-vertical .card:not(:first-child) {
+  margin-top: var(--card-overlap-vertical);
 }
 
 /* Safe responsive tweaks */
@@ -67,7 +71,6 @@ body {
   background: rgba(255, 255, 255, 0.1);
   padding: 1em;
   border-radius: 8px;
-  max-height: 70vh;
   overflow-y: auto;
   text-align: left;
   font-family: monospace;
@@ -82,4 +85,12 @@ button {
   margin-left: 10px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.player-label {
+      color: #333;
+      font-size: 1em;
+      margin-bottom: 2px;
+      font-weight: bold;
+      letter-spacing: 1px;
 }
