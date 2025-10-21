@@ -97,3 +97,47 @@ button {
   position: relative;
 }
 
+.player-left {
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.player-bottom {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.player-right{
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.trick-0 {
+    position: absolute;
+    top: 150%; 
+}
+
+.trick-1 {
+    position: absolute;
+    left: 150%;
+    align-self: center;
+}
+
+.trick-2 {
+    position: absolute;
+    top: -150%;
+}
+
+.trick-3 {
+    position: absolute;
+    left: -100%;
+}
