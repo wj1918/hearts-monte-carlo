@@ -1,3 +1,4 @@
+import type { ReturnDocument } from "mongodb";
 
 function waitForContinue(): Promise<void> {
   return new Promise(resolve => {
@@ -27,6 +28,16 @@ function renderHands(players: Player[]) {
       </div>
     `).join(' ');
   }
+}
+
+function renderTrick(player: Player, card: Card) {
+  const trickDiv = document.getElementById(`trick-${player.id}`);
+  if (!trickDiv) return;
+  trickDiv.innerHTML = `
+    <div class="card ${card.suit}${card.rank} up bottom" >
+      <div class="faceup" title="${card.suit}${card.rank}"></div>
+    </div>
+  `;
 }
 
 
@@ -176,6 +187,7 @@ export class HeartsGame {
         this.playedCards.push(card);
         log(`${player.name} plays ${card.rank}${card.suit}`);
         renderHands(this.players);
+        renderTrick(player,card);
         await new Promise(r => setTimeout(r, 100));
       }
 

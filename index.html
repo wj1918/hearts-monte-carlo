@@ -11,45 +11,57 @@
   <h1>♥️ Hearts (Monte Carlo AI)</h1>
 
   <div style="display: flex;gap: 20px;flex-wrap: wrap;">
-  <div>
+    <div>
 
-  <div id="controls">
-    <label>Monte Carlo simulations per move:
-      <input type="range" id="simRange" min="2" max="60" step="2" value="10">
-      <span id="simCount">10</span>
-    </label>
-    <button id="startBtn">Start Game</button>
-    <label style="margin-left: 16px;">
-      <input type="checkbox" id="pauseTrick"> Pause after each Trick
-    </label>
-    <button id="continueBtn">Continue</button>
-  </div>
-
-
-  <div id="table-container" style="display: flex; flex-direction: column; align-items: center; margin: 32px 0;">
-    <div id="player-top" style="display: flex; flex-direction: column; align-items: center; margin-bottom: 16px;">
-      <span class="player-label">Alice</span>
-      <div id="hand-0" class="player-hand overlap"></div>
-    </div>
-    <div style="display: flex; flex-direction: row; justify-content: space-between; width: 100%; max-width: 800px;">
-      <div id="player-left" style="margin-right: 16px; display: flex; flex-direction: column; align-items: center;">
-        <span class="player-label">Bob</span>
-        <div id="hand-1" class="player-hand vertical-hand overlap-vertical"></div>
+      <div id="controls">
+        <label>Monte Carlo simulations per move:
+          <input type="range" id="simRange" min="2" max="60" step="2" value="10">
+          <span id="simCount">10</span>
+        </label>
+        <button id="startBtn">Start Game</button>
+        <label style="margin-left: 16px;">
+          <input type="checkbox" id="pauseTrick" checked> Pause after each Trick
+        </label>
+        <button id="continueBtn">Continue</button>
       </div>
-      <div id="player-right" style="margin-left: 16px; display: flex; flex-direction: column; align-items: center;">
-        <span class="player-label">Dave</span>
-        <div id="hand-3" class="player-hand vertical-hand overlap-vertical"></div>
+
+      <div id="table-container" style="display: flex; flex-direction: column; align-items: center; margin: 32px 0;">
+        <div id="player-top" class="player-top">
+          <span class="player-label">Alice</span>
+          <div id="trick-0" class="trick-0"></div>
+          <div id="hand-0" class="player-hand overlap"></div>
+        </div>
+        <div style="display: flex; flex-direction: row; justify-content: space-between; width: 100%; max-width: 800px;">
+
+
+          <div id="player-left" class="player-left">
+            <span class="player-label">Bob</span>
+            <div id="trick-1" class="trick-1"></div>
+
+            <div id="hand-1" class="player-hand vertical-hand overlap-vertical"></div>
+          </div>
+
+          <div id="player-right" class="player-right">
+            <div id="trick-3" class="trick-3">
+            </div>
+
+            <div id="hand-3" class="player-hand vertical-hand overlap-vertical"></div>
+            <span class="player-label">Dave</span>
+          </div>
+        </div>
+
+        <div id="player-bottom" class="player-bottom">
+          <div id="trick-2" class="trick-2">
+          </div>
+
+          <div id="hand-2" class="player-hand overlap"></div>
+          <span class="player-label">Carol</span>
+        </div>
       </div>
-    </div>
-    <div id="player-bottom" style="display: flex; flex-direction: column; align-items: center; margin-top: 16px;">
-      <span class="player-label">Carol</span>
-      <div id="hand-2" class="player-hand overlap"></div>
-    </div>
-  </div>
 
-  </div>
+    </div>
 
-  <div id="gameLog"></div>
+    <div id="gameLog"></div>
 
   </div>
 
