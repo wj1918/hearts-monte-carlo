@@ -164,7 +164,6 @@ export class HeartsGame {
 
 
   async playRound(numSims: number) {
-    this.deal();
     this.heartsBroken = false;
     this.playedCards = [];
     const leader = this.findPlayerWithCard('♣', '2');

@@ -141,3 +141,10 @@ button {
     position: absolute;
     left: -100%;
 }
+
+button:disabled {
+  background-color: #d3d3d3; /* Light gray background */
+  color: #a9a9a9; /* Gray text */
+  cursor: not-allowed; /* Show a "not allowed" cursor */
+  opacity: 0.6; /* Slight transparency for a grayed-out effect */
+}
