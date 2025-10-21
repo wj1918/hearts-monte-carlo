@@ -1,255 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>♥️ Hearts (Monte Carlo AI)</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>♥️ Hearts (Monte Carlo AI)</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="src/design.css" />
 </head>
 
 <body>
-  <h1>♥️ Hearts (Monte Carlo AI)</h1>
+    <h1>♥️ Hearts (Monte Carlo AI)</h1>
 
-  <div style="display: flex;gap: 20px;flex-wrap: wrap;">
+    <div style="display: flex;gap: 20px;flex-wrap: wrap;">
 
-  <div>
+        <div>
 
-  <div id="controls">
-    <label>Monte Carlo simulations per move:
-      <input type="range" id="simRange" min="2" max="60" step="2" value="10">
-      <span id="simCount">10</span>
-    </label>
-    <button id="startBtn">Start Game</button>
-    <label style="margin-left: 16px;">
-      <input type="checkbox" id="pauseTrick" disabled=""> Pause after each Trick
-    </label>
-    <button id="continueBtn">Continue</button>
-  </div>
+            <div id="controls">
+                <label>Monte Carlo simulations per move:
+                    <input type="range" id="simRange" min="2" max="60" step="2" value="10">
+                    <span id="simCount">10</span>
+                </label>
+                <button id="startBtn">Start Game</button>
+                <label style="margin-left: 16px;">
+                    <input type="checkbox" id="pauseTrick" disabled=""> Pause after each Trick
+                </label>
+                <button id="continueBtn">Continue</button>
+            </div>
 
 
-  <div id="table-container" style="display: flex; flex-direction: column; align-items: center; margin: 32px 0;">
-    <div id="player-top" style="display: flex; flex-direction: column; align-items: center; margin-bottom: 16px;">
-      <span class="player-label">Alice</span>
-      <div id="hand-0" class="player-hand overlap">
-      <div class="card ♣3 up bottom">
-        <div class="faceup" title="♣3"></div>
-      </div>
-     
-      <div class="card ♣4 up bottom">
-        <div class="faceup" title="♣4"></div>
-      </div>
-     
-      <div class="card ♣9 up bottom">
-        <div class="faceup" title="♣9"></div>
-      </div>
-     
-      <div class="card ♣10 up bottom">
-        <div class="faceup" title="♣10"></div>
-      </div>
-     
-      <div class="card ♣Q up bottom">
-        <div class="faceup" title="♣Q"></div>
-      </div>
-     
-      <div class="card ♦5 up bottom">
-        <div class="faceup" title="♦5"></div>
-      </div>
-     
-      <div class="card ♦7 up bottom">
-        <div class="faceup" title="♦7"></div>
-      </div>
-     
-      <div class="card ♦A up bottom">
-        <div class="faceup" title="♦A"></div>
-      </div>
-     
-      <div class="card ♥2 up bottom">
-        <div class="faceup" title="♥2"></div>
-      </div>
-     
-      <div class="card ♥6 up bottom">
-        <div class="faceup" title="♥6"></div>
-      </div>
-     
-      <div class="card ♥8 up bottom">
-        <div class="faceup" title="♥8"></div>
-      </div>
-     
-      <div class="card ♥J up bottom">
-        <div class="faceup" title="♥J"></div>
-      </div>
+            <div id="table-container"
+                style="display: flex; flex-direction: column; align-items: center; margin: 32px 0;">
+                <div id="player-top" class="player-top">
+                    <span class="player-label">Alice</span>
+                    <div id="hand-0" class="player-hand overlap">
+                        <div class="card ♣3 up bottom">
+                            <div class="faceup" title="♣3"></div>
+                        </div>
+
+                        <div class="card ♣4 up bottom">
+                            <div class="faceup" title="♣4"></div>
+                        </div>
+
+                        <div class="card ♣9 up bottom">
+                            <div class="faceup" title="♣9"></div>
+                        </div>
+
+                        <div class="card ♣10 up bottom">
+                            <div class="faceup" title="♣10"></div>
+                        </div>
+
+                        <div class="card ♣Q up bottom">
+                            <div class="faceup" title="♣Q"></div>
+                        </div>
+
+                        <div class="card ♦5 up bottom">
+                            <div class="faceup" title="♦5"></div>
+                        </div>
+
+                        <div class="card ♦7 up bottom">
+                            <div class="faceup" title="♦7"></div>
+                        </div>
+
+                        <div class="card ♦A up bottom">
+                            <div class="faceup" title="♦A"></div>
+                        </div>
+
+                        <div class="card ♥2 up bottom">
+                            <div class="faceup" title="♥2"></div>
+                        </div>
+
+                        <div class="card ♥6 up bottom">
+                            <div class="faceup" title="♥6"></div>
+                        </div>
+
+                        <div class="card ♥8 up bottom">
+                            <div class="faceup" title="♥8"></div>
+                        </div>
+
+                        <div class="card ♥J up bottom">
+                            <div class="faceup" title="♥J"></div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    style="display: flex; flex-direction: row; justify-content: space-between; width: 100%; max-width: 800px;">
+                    <div id="player-left"
+                        style="margin-right: 16px; display: flex; flex-direction: column; align-items: center;">
+                        <span class="player-label">Bob</span>
+                        <div id="hand-1" class="player-hand vertical-hand overlap-vertical">
+                            <div class="card ♣2 up bottom">
+                                <div class="faceup" title="♣2"></div>
+                            </div>
+
+                            <div class="card ♣7 up bottom">
+                                <div class="faceup" title="♣7"></div>
+                            </div>
+
+                            <div class="card ♣K up bottom">
+                                <div class="faceup" title="♣K"></div>
+                            </div>
+
+                            <div class="card ♦2 up bottom">
+                                <div class="faceup" title="♦2"></div>
+                            </div>
+
+                            <div class="card ♦9 up bottom">
+                                <div class="faceup" title="♦9"></div>
+                            </div>
+
+                            <div class="card ♥7 up bottom">
+                                <div class="faceup" title="♥7"></div>
+                            </div>
+
+                            <div class="card ♥9 up bottom">
+                                <div class="faceup" title="♥9"></div>
+                            </div>
+
+                            <div class="card ♠2 up bottom">
+                                <div class="faceup" title="♠2"></div>
+                            </div>
+
+                            <div class="card ♠3 up bottom">
+                                <div class="faceup" title="♠3"></div>
+                            </div>
+
+                            <div class="card ♠6 up bottom">
+                                <div class="faceup" title="♠6"></div>
+                            </div>
+
+                            <div class="card ♠8 up bottom">
+                                <div class="faceup" title="♠8"></div>
+                            </div>
+
+                            <div class="card ♠A up bottom">
+                                <div class="faceup" title="♠A"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="player-right"
+                        style="margin-left: 16px; display: flex; flex-direction: column; align-items: center;">
+                        <span class="player-label">Dave</span>
+                        <div id="hand-3" class="player-hand vertical-hand overlap-vertical">
+                            <div class="card ♣J up bottom">
+                                <div class="faceup" title="♣J"></div>
+                            </div>
+
+                            <div class="card ♦6 up bottom">
+                                <div class="faceup" title="♦6"></div>
+                            </div>
+
+                            <div class="card ♦10 up bottom">
+                                <div class="faceup" title="♦10"></div>
+                            </div>
+
+                            <div class="card ♦J up bottom">
+                                <div class="faceup" title="♦J"></div>
+                            </div>
+
+                            <div class="card ♦K up bottom">
+                                <div class="faceup" title="♦K"></div>
+                            </div>
+
+                            <div class="card ♥3 up bottom">
+                                <div class="faceup" title="♥3"></div>
+                            </div>
+
+                            <div class="card ♥K up bottom">
+                                <div class="faceup" title="♥K"></div>
+                            </div>
+
+                            <div class="card ♠4 up bottom">
+                                <div class="faceup" title="♠4"></div>
+                            </div>
+
+                            <div class="card ♠5 up bottom">
+                                <div class="faceup" title="♠5"></div>
+                            </div>
+
+                            <div class="card ♠9 up bottom">
+                                <div class="faceup" title="♠9"></div>
+                            </div>
+
+                            <div class="card ♠J up bottom">
+                                <div class="faceup" title="♠J"></div>
+                            </div>
+
+                            <div class="card ♠K up bottom">
+                                <div class="faceup" title="♠K"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="player-bottom"
+                    style="display: flex; flex-direction: column; align-items: center; margin-top: 16px;">
+                    <span class="player-label">Carol</span>
+                    <div id="hand-2" class="player-hand overlap">
+                        <div class="card ♦3 up bottom">
+                            <div class="faceup" title="♦3"></div>
+                        </div>
+
+                        <div class="card ♦4 up bottom">
+                            <div class="faceup" title="♦4"></div>
+                        </div>
+
+                        <div class="card ♦8 up bottom">
+                            <div class="faceup" title="♦8"></div>
+                        </div>
+
+                        <div class="card ♦Q up bottom">
+                            <div class="faceup" title="♦Q"></div>
+                        </div>
+
+                        <div class="card ♥4 up bottom">
+                            <div class="faceup" title="♥4"></div>
+                        </div>
+
+                        <div class="card ♥5 up bottom">
+                            <div class="faceup" title="♥5"></div>
+                        </div>
+
+                        <div class="card ♥10 up bottom">
+                            <div class="faceup" title="♥10"></div>
+                        </div>
+
+                        <div class="card ♥Q up bottom">
+                            <div class="faceup" title="♥Q"></div>
+                        </div>
+
+                        <div class="card ♥A up bottom">
+                            <div class="faceup" title="♥A"></div>
+                        </div>
+
+                        <div class="card ♠7 up bottom">
+                            <div class="faceup" title="♠7"></div>
+                        </div>
+
+                        <div class="card ♠10 up bottom">
+                            <div class="faceup" title="♠10"></div>
+                        </div>
+
+                        <div class="card ♠Q up bottom">
+                            <div class="faceup" title="♠Q"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="gameLog">Starting Hearts Game with 10 Monte Carlo sims per move...<br>Bob plays 8♣<br>Carol plays
+            5♣<br>Dave plays A♣<br>Alice plays 6♣<br>🂠 Trick winner: Dave<br><br></div>
+
     </div>
-    </div>
-    <div style="display: flex; flex-direction: row; justify-content: space-between; width: 100%; max-width: 800px;">
-      <div id="player-left" style="margin-right: 16px; display: flex; flex-direction: column; align-items: center;">
-        <span class="player-label">Bob</span>
-        <div id="hand-1" class="player-hand vertical-hand overlap-vertical">
-      <div class="card ♣2 up bottom">
-        <div class="faceup" title="♣2"></div>
-      </div>
-     
-      <div class="card ♣7 up bottom">
-        <div class="faceup" title="♣7"></div>
-      </div>
-     
-      <div class="card ♣K up bottom">
-        <div class="faceup" title="♣K"></div>
-      </div>
-     
-      <div class="card ♦2 up bottom">
-        <div class="faceup" title="♦2"></div>
-      </div>
-     
-      <div class="card ♦9 up bottom">
-        <div class="faceup" title="♦9"></div>
-      </div>
-     
-      <div class="card ♥7 up bottom">
-        <div class="faceup" title="♥7"></div>
-      </div>
-     
-      <div class="card ♥9 up bottom">
-        <div class="faceup" title="♥9"></div>
-      </div>
-     
-      <div class="card ♠2 up bottom">
-        <div class="faceup" title="♠2"></div>
-      </div>
-     
-      <div class="card ♠3 up bottom">
-        <div class="faceup" title="♠3"></div>
-      </div>
-     
-      <div class="card ♠6 up bottom">
-        <div class="faceup" title="♠6"></div>
-      </div>
-     
-      <div class="card ♠8 up bottom">
-        <div class="faceup" title="♠8"></div>
-      </div>
-     
-      <div class="card ♠A up bottom">
-        <div class="faceup" title="♠A"></div>
-      </div>
-    </div>
-      </div>
-      <div id="player-right" style="margin-left: 16px; display: flex; flex-direction: column; align-items: center;">
-        <span class="player-label">Dave</span>
-        <div id="hand-3" class="player-hand vertical-hand overlap-vertical">
-      <div class="card ♣J up bottom">
-        <div class="faceup" title="♣J"></div>
-      </div>
-     
-      <div class="card ♦6 up bottom">
-        <div class="faceup" title="♦6"></div>
-      </div>
-     
-      <div class="card ♦10 up bottom">
-        <div class="faceup" title="♦10"></div>
-      </div>
-     
-      <div class="card ♦J up bottom">
-        <div class="faceup" title="♦J"></div>
-      </div>
-     
-      <div class="card ♦K up bottom">
-        <div class="faceup" title="♦K"></div>
-      </div>
-     
-      <div class="card ♥3 up bottom">
-        <div class="faceup" title="♥3"></div>
-      </div>
-     
-      <div class="card ♥K up bottom">
-        <div class="faceup" title="♥K"></div>
-      </div>
-     
-      <div class="card ♠4 up bottom">
-        <div class="faceup" title="♠4"></div>
-      </div>
-     
-      <div class="card ♠5 up bottom">
-        <div class="faceup" title="♠5"></div>
-      </div>
-     
-      <div class="card ♠9 up bottom">
-        <div class="faceup" title="♠9"></div>
-      </div>
-     
-      <div class="card ♠J up bottom">
-        <div class="faceup" title="♠J"></div>
-      </div>
-     
-      <div class="card ♠K up bottom">
-        <div class="faceup" title="♠K"></div>
-      </div>
-    </div>
-      </div>
-    </div>
-    <div id="player-bottom" style="display: flex; flex-direction: column; align-items: center; margin-top: 16px;">
-      <span class="player-label">Carol</span>
-      <div id="hand-2" class="player-hand overlap">
-      <div class="card ♦3 up bottom">
-        <div class="faceup" title="♦3"></div>
-      </div>
-     
-      <div class="card ♦4 up bottom">
-        <div class="faceup" title="♦4"></div>
-      </div>
-     
-      <div class="card ♦8 up bottom">
-        <div class="faceup" title="♦8"></div>
-      </div>
-     
-      <div class="card ♦Q up bottom">
-        <div class="faceup" title="♦Q"></div>
-      </div>
-     
-      <div class="card ♥4 up bottom">
-        <div class="faceup" title="♥4"></div>
-      </div>
-     
-      <div class="card ♥5 up bottom">
-        <div class="faceup" title="♥5"></div>
-      </div>
-     
-      <div class="card ♥10 up bottom">
-        <div class="faceup" title="♥10"></div>
-      </div>
-     
-      <div class="card ♥Q up bottom">
-        <div class="faceup" title="♥Q"></div>
-      </div>
-     
-      <div class="card ♥A up bottom">
-        <div class="faceup" title="♥A"></div>
-      </div>
-     
-      <div class="card ♠7 up bottom">
-        <div class="faceup" title="♠7"></div>
-      </div>
-     
-      <div class="card ♠10 up bottom">
-        <div class="faceup" title="♠10"></div>
-      </div>
-     
-      <div class="card ♠Q up bottom">
-        <div class="faceup" title="♠Q"></div>
-      </div>
-    </div>
-    </div>
-  </div>
 
-  </div>
-
-  <div id="gameLog">Starting Hearts Game with 10 Monte Carlo sims per move...<br>Bob plays 8♣<br>Carol plays 5♣<br>Dave plays A♣<br>Alice plays 6♣<br>🂠 Trick winner: Dave<br><br></div>
-
-  </div>
-
-  <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/main.ts"></script>
 
 
 
 </body>
+
 </html>

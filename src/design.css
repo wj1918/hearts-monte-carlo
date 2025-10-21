@@ -1,0 +1,5 @@
+/* these styles are loaded only in design mode */
+
+.player-top {
+  border: 4px solid yellow;
+}
