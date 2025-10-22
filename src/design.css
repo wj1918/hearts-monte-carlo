@@ -19,3 +19,22 @@
 .player-label {
     border: 4px dashed yellow;
 }
+
+
+.player-hand {
+  border: 4px dashed blue;
+}
+
+.trick-0 {
+    position: absolute; 
+    top:104px;
+    left: 407px;
+    animation: move-to-location 500ms ease-in-out forwards;
+}
+
+@keyframes move-to-location {
+    to {
+        transform: translate(-197px, 106px);
+    }
+}
+
