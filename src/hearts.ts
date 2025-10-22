@@ -1,4 +1,3 @@
-import type { ReturnDocument } from "mongodb";
 
 function waitForContinue(): Promise<void> {
   return new Promise(resolve => {

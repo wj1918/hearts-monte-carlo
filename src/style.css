@@ -146,7 +146,8 @@ button {
 
 .trick-0 {
     position: absolute; 
-    top:210px
+    top:210px;
+    transition: all 1s ease;
 }
 
 .trick-1 {
