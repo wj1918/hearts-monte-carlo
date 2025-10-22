@@ -82,11 +82,13 @@ button {
 }
 
 .player-label {
-      color: #333;
-      font-size: 1em;
-      margin-bottom: 2px;
-      font-weight: bold;
-      letter-spacing: 1px;
+    color: white;
+    font-size: 1em;
+    margin-bottom: 2px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 80px;
+    height: 80px;
 }
 
 .player-top {
@@ -121,25 +123,45 @@ button {
   position: relative;
 }
 
-.trick-0 {
+.trick-0-from {
     position: absolute;
-    top: 150%; 
+    top: 100%; 
+}
+
+.trick-1-from {
+    position: relative;
+    /* left: 100%; */
+    align-self: center;
+}
+
+.trick-2-from {
+    position: absolute;
+    top: -100%;
+}
+
+.trick-3-from {
+    position: absolute;
+    left: -100%;
+}
+
+.trick-0 {
+    position: absolute; 
+    top:210px
 }
 
 .trick-1 {
     position: absolute;
-    left: 150%;
-    align-self: center;
+    left:180px
 }
 
 .trick-2 {
     position: absolute;
-    top: -120%;
+    top: -100px;
 }
 
 .trick-3 {
     position: absolute;
-    left: -100%;
+    left: -80px;
 }
 
 button:disabled {

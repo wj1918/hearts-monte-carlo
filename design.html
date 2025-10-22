@@ -5,9 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>♥️ Hearts (Monte Carlo AI)</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="src/styles.css" />
-    <link rel="stylesheet" href="src/design.css" />
 </head>
 
 <body>
@@ -33,19 +30,34 @@
             <div id="table-container"
                 style="display: flex; flex-direction: column; align-items: center; margin: 32px 0;">
                 <div id="player-top" class="player-top">
-                    <span class="player-label">Alice</span>
-                    <div id="trick-0" class="trick-0">
-                        <div class="card ♣6 up center">
-                            <div class="faceup" title="♣6"></div>
-                        </div>
-                    </div>
+                    <span class="player-label">Player 0 Alice</span>
                     <div id="hand-0" class="player-hand overlap">
+                        <div class="card ♣2 up bottom">
+                            <div class="faceup" title="♣2"></div>
+                        </div>
+
                         <div class="card ♣3 up bottom">
                             <div class="faceup" title="♣3"></div>
                         </div>
 
                         <div class="card ♣4 up bottom">
                             <div class="faceup" title="♣4"></div>
+                        </div>
+
+                        <div class="card ♣5 up bottom">
+                            <div class="faceup" title="♣5"></div>
+                        </div>
+
+                        <div class="card ♣6 up bottom">
+                            <div class="faceup" title="♣6"></div>
+                        </div>
+
+                        <div class="card ♣7 up bottom">
+                            <div class="faceup" title="♣7"></div>
+                        </div>
+
+                        <div class="card ♣8 up bottom">
+                            <div class="faceup" title="♣8"></div>
                         </div>
 
                         <div class="card ♣9 up bottom">
@@ -56,36 +68,26 @@
                             <div class="faceup" title="♣10"></div>
                         </div>
 
+                        <div class="card ♣J up bottom">
+                            <div class="faceup" title="♣J"></div>
+                        </div>
+
                         <div class="card ♣Q up bottom">
                             <div class="faceup" title="♣Q"></div>
                         </div>
 
-                        <div class="card ♦5 up bottom">
-                            <div class="faceup" title="♦5"></div>
+                        <div class="card ♣K up bottom">
+                            <div class="faceup" title="♣K"></div>
                         </div>
 
-                        <div class="card ♦7 up bottom">
-                            <div class="faceup" title="♦7"></div>
+                        <div class="card ♣A up bottom">
+                            <div class="faceup" title="♣A"></div>
                         </div>
 
-                        <div class="card ♦A up bottom">
-                            <div class="faceup" title="♦A"></div>
-                        </div>
-
-                        <div class="card ♥2 up bottom">
-                            <div class="faceup" title="♥2"></div>
-                        </div>
-
-                        <div class="card ♥6 up bottom">
-                            <div class="faceup" title="♥6"></div>
-                        </div>
-
-                        <div class="card ♥8 up bottom">
-                            <div class="faceup" title="♥8"></div>
-                        </div>
-
-                        <div class="card ♥J up bottom">
-                            <div class="faceup" title="♥J"></div>
+                    </div>
+                    <div id="trick-0" class="trick-0">
+                        <div class="card ♣A up center">
+                            <div class="faceup" title="♣A"></div>
                         </div>
                     </div>
                 </div>
@@ -93,76 +95,38 @@
                     style="display: flex; flex-direction: row; justify-content: space-between; width: 100%; max-width: 800px;">
 
                     <div id="player-left" class="player-left">
-                        <span class="player-label">Bob</span>
-                        <div id="trick-1" class="trick-1">
-                            <div class="card ♦6 up center">
-                                <div class="faceup" title="♦6"></div>
-                            </div>
-                        </div>
-
+                        <span class="player-label">Player 1 Bob</span>
                         <div id="hand-1" class="player-hand vertical-hand overlap-vertical">
-                            <div class="card ♣2 up bottom">
-                                <div class="faceup" title="♣2"></div>
-                            </div>
-
-                            <div class="card ♣7 up bottom">
-                                <div class="faceup" title="♣7"></div>
-                            </div>
-
-                            <div class="card ♣K up bottom">
-                                <div class="faceup" title="♣K"></div>
-                            </div>
-
                             <div class="card ♦2 up bottom">
                                 <div class="faceup" title="♦2"></div>
                             </div>
 
-                            <div class="card ♦9 up bottom">
-                                <div class="faceup" title="♦9"></div>
+                            <div class="card ♦3 up bottom">
+                                <div class="faceup" title="♦3"></div>
                             </div>
 
-                            <div class="card ♥7 up bottom">
-                                <div class="faceup" title="♥7"></div>
+                            <div class="card ♦4 up bottom">
+                                <div class="faceup" title="♦4"></div>
                             </div>
 
-                            <div class="card ♥9 up bottom">
-                                <div class="faceup" title="♥9"></div>
-                            </div>
-
-                            <div class="card ♠2 up bottom">
-                                <div class="faceup" title="♠2"></div>
-                            </div>
-
-                            <div class="card ♠3 up bottom">
-                                <div class="faceup" title="♠3"></div>
-                            </div>
-
-                            <div class="card ♠6 up bottom">
-                                <div class="faceup" title="♠6"></div>
-                            </div>
-
-                            <div class="card ♠8 up bottom">
-                                <div class="faceup" title="♠8"></div>
-                            </div>
-
-                            <div class="card ♠A up bottom">
-                                <div class="faceup" title="♠A"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="player-right" class="player-right">
-                        <div id="trick-3" class="trick-3">
-                            <div class="card ♥9 up center">
-                                <div class="faceup" title="♥9"></div>
-                            </div>
-                        </div>
-                        <div id="hand-3" class="player-hand vertical-hand overlap-vertical">
-                            <div class="card ♣J up bottom">
-                                <div class="faceup" title="♣J"></div>
+                            <div class="card ♦5 up bottom">
+                                <div class="faceup" title="♦5"></div>
                             </div>
 
                             <div class="card ♦6 up bottom">
                                 <div class="faceup" title="♦6"></div>
+                            </div>
+
+                            <div class="card ♦7 up bottom">
+                                <div class="faceup" title="♦7"></div>
+                            </div>
+
+                            <div class="card ♦8 up bottom">
+                                <div class="faceup" title="♦8"></div>
+                            </div>
+
+                            <div class="card ♦9 up bottom">
+                                <div class="faceup" title="♦9"></div>
                             </div>
 
                             <div class="card ♦10 up bottom">
@@ -173,98 +137,148 @@
                                 <div class="faceup" title="♦J"></div>
                             </div>
 
+                            <div class="card ♦Q up bottom">
+                                <div class="faceup" title="♦Q"></div>
+                            </div>
+
                             <div class="card ♦K up bottom">
                                 <div class="faceup" title="♦K"></div>
+                            </div>
+
+                            <div class="card ♦A up bottom">
+                                <div class="faceup" title="♦A"></div>
+                            </div>
+
+                        </div>
+                        <div id="trick-1" class="trick-1">
+                            <div class="card ♦6 up center">
+                                <div class="faceup" title="♦6"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="player-right" class="player-right">
+                        <div id="trick-3" class="trick-3">
+                            <div class="card ♥9 up center">
+                                <div class="faceup" title="♥9"></div>
+                            </div>
+                        </div>
+                        <div id="hand-3" class="player-hand vertical-hand overlap-vertical">
+                            <div class="card ♥2 up bottom">
+                                <div class="faceup" title="♥2"></div>
                             </div>
 
                             <div class="card ♥3 up bottom">
                                 <div class="faceup" title="♥3"></div>
                             </div>
 
+                            <div class="card ♥4 up bottom">
+                                <div class="faceup" title="♥4"></div>
+                            </div>
+
+                            <div class="card ♥5 up bottom">
+                                <div class="faceup" title="♥5"></div>
+                            </div>
+
+                            <div class="card ♥6 up bottom">
+                                <div class="faceup" title="♥6"></div>
+                            </div>
+
+                            <div class="card ♥7 up bottom">
+                                <div class="faceup" title="♥7"></div>
+                            </div>
+
+                            <div class="card ♥8 up bottom">
+                                <div class="faceup" title="♥8"></div>
+                            </div>
+
+                            <div class="card ♥9 up bottom">
+                                <div class="faceup" title="♥9"></div>
+                            </div>
+
+                            <div class="card ♥10 up bottom">
+                                <div class="faceup" title="♥10"></div>
+                            </div>
+
+                            <div class="card ♥J up bottom">
+                                <div class="faceup" title="♥J"></div>
+                            </div>
+
+                            <div class="card ♥Q up bottom">
+                                <div class="faceup" title="♥Q"></div>
+                            </div>
+
                             <div class="card ♥K up bottom">
                                 <div class="faceup" title="♥K"></div>
                             </div>
 
-                            <div class="card ♠4 up bottom">
-                                <div class="faceup" title="♠4"></div>
+                            <div class="card ♥A up bottom">
+                                <div class="faceup" title="♥A"></div>
                             </div>
 
-                            <div class="card ♠5 up bottom">
-                                <div class="faceup" title="♠5"></div>
-                            </div>
-
-                            <div class="card ♠9 up bottom">
-                                <div class="faceup" title="♠9"></div>
-                            </div>
-
-                            <div class="card ♠J up bottom">
-                                <div class="faceup" title="♠J"></div>
-                            </div>
-
-                            <div class="card ♠K up bottom">
-                                <div class="faceup" title="♠K"></div>
-                            </div>
                         </div>
-                        <span class="player-label">Dave</span>
+                        <span class="player-label">Player 3 Dave</span>
 
                     </div>
                 </div>
                 <div id="player-bottom" class="player-bottom">
                     <div id="trick-2" class="trick-2">
-                        <div class="card ♠7 up center">
-                            <div class="faceup" title="♠7"></div>
+                        <div class="card ♠2 up center">
+                            <div class="faceup" title="♠2"></div>
                         </div>
                     </div>
                     <div id="hand-2" class="player-hand overlap">
-                        <div class="card ♦3 up bottom">
-                            <div class="faceup" title="♦3"></div>
+                        <div class="card ♠2 up bottom">
+                            <div class="faceup" title="♠2"></div>
+                        </div>
+                        <div class="card ♠3 up bottom">
+                            <div class="faceup" title="♠3"></div>
                         </div>
 
-                        <div class="card ♦4 up bottom">
-                            <div class="faceup" title="♦4"></div>
+                        <div class="card ♠4 up bottom">
+                            <div class="faceup" title="♠4"></div>
                         </div>
 
-                        <div class="card ♦8 up bottom">
-                            <div class="faceup" title="♦8"></div>
+                        <div class="card ♠5 up bottom">
+                            <div class="faceup" title="♠5"></div>
                         </div>
 
-                        <div class="card ♦Q up bottom">
-                            <div class="faceup" title="♦Q"></div>
-                        </div>
-
-                        <div class="card ♥4 up bottom">
-                            <div class="faceup" title="♥4"></div>
-                        </div>
-
-                        <div class="card ♥5 up bottom">
-                            <div class="faceup" title="♥5"></div>
-                        </div>
-
-                        <div class="card ♥10 up bottom">
-                            <div class="faceup" title="♥10"></div>
-                        </div>
-
-                        <div class="card ♥Q up bottom">
-                            <div class="faceup" title="♥Q"></div>
-                        </div>
-
-                        <div class="card ♥A up bottom">
-                            <div class="faceup" title="♥A"></div>
+                        <div class="card ♠6 up bottom">
+                            <div class="faceup" title="♠6"></div>
                         </div>
 
                         <div class="card ♠7 up bottom">
                             <div class="faceup" title="♠7"></div>
                         </div>
 
+                        <div class="card ♠8 up bottom">
+                            <div class="faceup" title="♠8"></div>
+                        </div>
+
+                        <div class="card ♠9 up bottom">
+                            <div class="faceup" title="♠9"></div>
+                        </div>
+
                         <div class="card ♠10 up bottom">
                             <div class="faceup" title="♠10"></div>
+                        </div>
+
+                        <div class="card ♠J up bottom">
+                            <div class="faceup" title="♠J"></div>
                         </div>
 
                         <div class="card ♠Q up bottom">
                             <div class="faceup" title="♠Q"></div>
                         </div>
+                        <div class="card ♠K up bottom">
+                            <div class="faceup" title="♠K"></div>
+                        </div>
+
+                        <div class="card ♥A up bottom">
+                            <div class="faceup" title="♥A"></div>
+                        </div>
+
                     </div>
-                    <span class="player-label">Carol</span>
+                    <span class="player-label">Player 2 Carol</span>
                 </div>
             </div>
 
@@ -275,9 +289,7 @@
 
     </div>
 
-    <script type="module" src="/src/main.ts"></script>
-
-
+    <script type="module" src="/src/design.ts"></script>
 
 </body>
 

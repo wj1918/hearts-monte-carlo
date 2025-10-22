@@ -16,3 +16,6 @@
     border: 4px solid yellow;
 }
 
+.player-label {
+    border: 4px dashed yellow;
+}
