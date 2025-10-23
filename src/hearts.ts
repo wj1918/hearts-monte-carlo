@@ -21,7 +21,7 @@ function renderHands(players: Player[]) {
       if (suitDiff !== 0) return suitDiff;
       return rankOrder.indexOf(a.rank) - rankOrder.indexOf(b.rank);
     });
-    handDiv.innerHTML = sortedHand.map((card, idx) => `
+    handDiv.innerHTML = sortedHand.map((card) => `
       <div class="card ${card.suit}${card.rank} up bottom" >
         <div class="faceup" title="${card.suit}${card.rank}"></div>
       </div>
