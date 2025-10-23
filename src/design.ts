@@ -15,6 +15,7 @@ startBtn!.addEventListener('click', async () => {
 const elements = document.querySelectorAll('.card');
 
 var totalTrick=0
+var tricks=""
 
 elements.forEach(element => {
   element.addEventListener('click', () => {
@@ -25,10 +26,15 @@ elements.forEach(element => {
     if (trickElement) {
         trickElement.appendChild(element);
         totalTrick++
+        tricks+=element.classList[1]+ " "
     }
-
-    if (totalTrick===4){
-        
+    if (totalTrick==4){
+        setTimeout(() => {
+            alert("Trick completed: "+tricks)
+            totalTrick=0
+            tricks=""
+        }, 100);
+        //
     }
 
   });
