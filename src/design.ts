@@ -11,3 +11,26 @@ startBtn!.addEventListener('click', async () => {
 
 });
 */
+
+const elements = document.querySelectorAll('.card');
+
+var totalTrick=0
+
+elements.forEach(element => {
+  element.addEventListener('click', () => {
+    const parentId=element.parentElement?.id
+    const playerId=parentId?.split('-')[1]
+    const trickId="trick-"+playerId
+    const trickElement=document.getElementById(trickId)
+    if (trickElement) {
+        trickElement.appendChild(element);
+        totalTrick++
+    }
+
+    if (totalTrick===4){
+        
+    }
+
+  });
+});
+

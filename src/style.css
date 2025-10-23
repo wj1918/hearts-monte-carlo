@@ -170,3 +170,8 @@ button:disabled {
   cursor: not-allowed; /* Show a "not allowed" cursor */
   opacity: 0.6; /* Slight transparency for a grayed-out effect */
 }
+
+.trick{
+  height: 93px;
+  width: 68px;
+}

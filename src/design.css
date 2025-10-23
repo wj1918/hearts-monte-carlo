@@ -27,9 +27,12 @@
 
 .trick-0 {
     position: absolute; 
-    top:104px;
-    left: 407px;
-    animation: move-to-location 500ms ease-in-out forwards;
+    top:210px;
+    left: 210px;
+}
+
+.trick {
+    border: 4px dashed white;
 }
 
 @keyframes move-to-location {
